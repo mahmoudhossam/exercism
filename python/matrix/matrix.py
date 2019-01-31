@@ -1,9 +1,15 @@
 class Matrix(object):
     def __init__(self, matrix_string):
-        pass
+        rows = matrix_string.split("\n")
+        self.matrix = []
+        for row in rows:
+            self.matrix.append([int(x) for x in row.split()])
 
     def row(self, index):
-        pass
+        return self.matrix[index - 1]
 
     def column(self, index):
-        pass
+        column = []
+        for row in self.matrix:
+            column.append(row[index - 1])
+        return column
